@@ -100,7 +100,7 @@ namespace Eshop.Controllers
         [HttpPost]
         public IActionResult Login(string Username,  string Password)
         {
-            int count = _context.Accounts.Count(acc => acc.Username == Username && acc.Password == Password);
+            int count = _context.Accounts.Count(acc => acc.Username == Username && acc.Password == Password && acc.Status == true);
             var account = _context.Accounts.FirstOrDefault(a => a.Username == Username && a.Password == Password);
                 if(count == 1)
             {

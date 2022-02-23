@@ -38,7 +38,7 @@ namespace Eshop.Controllers
             }
             ViewBag.Banner = _context.Advertisement.Where(a=>a.ImageTypeId == 2);
             ViewBag.Adv = _context.Advertisement.Where(a=>a.ImageTypeId == 1);
-            var eshopContext = _context.Products.Include(p => p.ProductType);
+            var eshopContext = _context.Products.Include(p => p.ProductType).Where(a=>a.Status==true);
             return View(await eshopContext.OrderBy(x=>x.Id).Take(12).ToListAsync());
         }
 
