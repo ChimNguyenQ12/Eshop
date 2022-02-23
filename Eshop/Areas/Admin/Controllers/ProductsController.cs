@@ -116,6 +116,7 @@ namespace Eshop.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            ViewBag.total = _context.Products.Count(a => a.ProductTypeId == id);
             ViewData["ProductTypeId"] = new SelectList(_context.ProductTypes, "Id", "Name", product.ProductTypeId);
             return View(product);
         }

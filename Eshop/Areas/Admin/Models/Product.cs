@@ -54,7 +54,7 @@ namespace Eshop.Models
         [DisplayName("Ảnh Sản Phẩm")]
 
         [NotMapped]
-        [RegularExpression(@"^.*\.(jpg|JPG|gif|GIF|png|PNG)$", ErrorMessage = "Sai kiểu dữ liệu")]
+        //[RegularExpression(@"^.*\.(jpg|JPG|gif|GIF|png|PNG)$", ErrorMessage = "Sai kiểu dữ liệu")]
         public IFormFile ImageFile { get; set; }
 
         [DisplayName("Ngày tạo")]

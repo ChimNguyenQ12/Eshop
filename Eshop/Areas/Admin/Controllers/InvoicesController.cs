@@ -172,7 +172,7 @@ namespace Eshop.Areas.Admin.Controllers
         public IActionResult RevenueStatistics(DateTime startDate, DateTime endDate)
         {
             endDate = endDate.AddDays(1);
-            var invoices = _context.Invoices.Where(i => i.IssuedDate >= startDate && i.IssuedDate <= endDate);
+            var invoices = _context.Invoices.Include(a=>a.Account).Where(i => i.IssuedDate >= startDate && i.IssuedDate <= endDate);
                 ViewBag.Total = invoices.Sum(i => i.Total);
             return View(invoices);
         }

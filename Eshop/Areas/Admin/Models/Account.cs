@@ -47,7 +47,7 @@ namespace Eshop.Models
         public string Avatar { get; set; }
 
         [NotMapped]
-        [RegularExpression(@"^.*\.(jpg|JPG|gif|GIF|png|PNG)$", ErrorMessage = "Sai kiểu dữ liệu")]
+        //[RegularExpression(@"^.*\.(jpg|JPG|gif|GIF|png|PNG)$", ErrorMessage = "Sai kiểu dữ liệu")]
         [DisplayName("Ảnh đại diện")]
         public IFormFile ImageFile { get; set; }
 
